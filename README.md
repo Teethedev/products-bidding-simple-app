@@ -21,6 +21,7 @@ Update the database details in .env
 
 Install the packages
 
+    composer install
     npm install
 
 Copy the assets
