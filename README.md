@@ -13,8 +13,9 @@ Requirements
 
 Installation
 ============
+Clone the project to your machine
 
-    composer require Teethedev/products-bidding-simple-app:dev-master
+    git clone https://github.com/Teethedev/products-bidding-simple-app.git
 
 Update the database details in .env
 
