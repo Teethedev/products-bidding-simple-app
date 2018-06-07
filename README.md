@@ -31,4 +31,8 @@ Copy the assets
 Run the migrations and seeders
 
     php artisan migrate --seed
+  
+ Generate app key
+ 
+    php artisan key:generate
 
