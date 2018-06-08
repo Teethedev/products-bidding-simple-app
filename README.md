@@ -21,6 +21,7 @@ Update the database details in .env
 
 Install the packages
 
+    composer install
     npm install
 
 Copy the assets
@@ -30,4 +31,8 @@ Copy the assets
 Run the migrations and seeders
 
     php artisan migrate --seed
+  
+ Generate app key
+ 
+    php artisan key:generate
 
