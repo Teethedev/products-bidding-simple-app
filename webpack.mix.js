@@ -17,7 +17,8 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .copyDirectory('node_modules/bootstrap', 'public/bootstrap')
    .copyDirectory('node_modules/jquery', 'public/jquery')
    .copyDirectory('node_modules/popper.js', 'public/popper.js')
-   .copyDirectory('node_modules/holderjs', 'public/holderjs');
+   .copyDirectory('node_modules/holderjs', 'public/holderjs')
+   .copyDirectory('node_modules/chart.js', 'public/chart.js');
 
    if (mix.inProduction()) {
       mix.version();

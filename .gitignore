@@ -6,6 +6,7 @@
 /public/popper.js
 /public/feather-icons
 /public/holderjs
+/public/chart.js
 /storage/*.key
 /vendor
 /.idea
