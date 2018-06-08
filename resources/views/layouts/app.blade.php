@@ -70,14 +70,15 @@
     <script src="{{ asset('holderjs/holder.min.js') }}"></script>
     <script src="{{ asset('chart.js/dist/Chart.min.js') }}"></script>
 
+<!--this should be only in the dashboard-->
     <script>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: <?php echo $product_names ?>,
           datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            data: <?php echo $product_views ?>,
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
@@ -90,12 +91,29 @@
             yAxes: [{
               ticks: {
                 beginAtZero: false
-              }
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Number of views'
+               }
+            }],
+            xAxes: [{
+              ticks: {
+                beginAtZero: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Products'
+               }
             }]
           },
           legend: {
             display: false,
-          }
+          },
+          title: {
+            display: true,
+            text: 'Products vs Number of views'
+         }
         }
       });
     </script>

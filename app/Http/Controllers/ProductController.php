@@ -31,7 +31,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //get all the products
+        //get products
         $products = Product::paginate(5);
 
         // load the view and pass the products
