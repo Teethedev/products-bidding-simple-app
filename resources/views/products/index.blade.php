@@ -1,4 +1,4 @@
-@extends('products.layouts.headfooter')
+@extends('layouts.app')
 
 @section('content')
 
