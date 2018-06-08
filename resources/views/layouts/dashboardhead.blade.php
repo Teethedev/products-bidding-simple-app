@@ -68,6 +68,54 @@
     </script>
 
     <script src="{{ asset('holderjs/holder.min.js') }}"></script>
+    <script src="{{ asset('chart.js/dist/Chart.min.js') }}"></script>
 
+<!--this should be only in the dashboard-->
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: <?php echo $product_names ?>,
+          datasets: [{
+            data: <?php echo $product_views ?>,
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Number of views'
+               }
+            }],
+            xAxes: [{
+              ticks: {
+                beginAtZero: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Products'
+               }
+            }]
+          },
+          legend: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: 'Products vs Number of views'
+         }
+        }
+      });
+    </script>
 </body>
 </html>
