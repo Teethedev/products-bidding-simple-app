@@ -2,6 +2,8 @@
 /public/hot
 /public/storage
 /public/bootstrap
+/public/jquery
+/public/popper.js
 /public/feather-icons
 /storage/*.key
 /vendor

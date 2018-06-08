@@ -14,7 +14,9 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .copyDirectory('node_modules/feather-icons', 'public/feather-icons')
-   .copyDirectory('node_modules/bootstrap', 'public/bootstrap');
+   .copyDirectory('node_modules/bootstrap', 'public/bootstrap')
+   .copyDirectory('node_modules/jquery', 'public/jquery')
+   .copyDirectory('node_modules/popper.js', 'public/popper.js');
 
    if (mix.inProduction()) {
       mix.version();
