@@ -98,7 +98,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         //get product bids 
-        $all_bids = $product->product_bids()->paginate(5);
+        $all_bids = $product->product_bids()->paginate(6);
 
         //increment the product views
         event(new ProductViewed($product));

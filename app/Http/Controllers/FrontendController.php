@@ -24,7 +24,7 @@ class FrontendController extends Controller
     public function index()
     {
         //get all the products
-        $products = Product::paginate(5);
+        $products = Product::paginate(6);
 
         // load the view and pass the products
         return View::make('frontend.index')
@@ -44,7 +44,7 @@ class FrontendController extends Controller
         $product = Product::find($id);
 
         //get product bids 
-        $all_bids = $product->product_bids()->paginate(5);
+        $all_bids = $product->product_bids()->paginate(6);
 
         //increment the product views
         event(new ProductViewed($product));
