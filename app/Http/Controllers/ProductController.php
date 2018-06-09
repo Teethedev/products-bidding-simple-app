@@ -180,4 +180,20 @@ class ProductController extends Controller
         return Redirect::to('dashboard/products');
     }
 
+     /**
+     * Search Products
+     *
+     * @return $products
+     */
+    public function search()
+    {
+          $string = Input::get('search');
+          $products = Product::search($string)->paginate(5);
+
+          // load the view and pass the products
+           return View::make('products.index')
+            ->with('products', $products);
+        
+    }
+
 }

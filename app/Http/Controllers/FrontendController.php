@@ -106,9 +106,9 @@ class FrontendController extends Controller
     }
 
       /**
-     * Obtain search results.
+     * Search Products
      *
-     * @return $results
+     * @return $products
      */
     public function search()
     {

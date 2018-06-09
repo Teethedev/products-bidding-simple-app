@@ -3,12 +3,31 @@
 @section('content')
 
 
-<h1>All the Products</h1>
+<h1>All Products</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
     <div class="alert alert-info">{{ Session::get('message') }}</div>
 @endif
+
+<div class="container">
+  
+        <div class="row">
+          {{ HTML::ul($errors->all()) }}
+          {{ Form::open(array('url' => 'dashboard/products/search')) }}
+          <div class="row">
+          <div class="form-group col-md-4">
+           {{ Form::label('Search', 'Search Products') }}
+           </div>
+           <div class="form-group col-md-4">
+            {{ Form::text('search', Input::old('search'), array('class' => 'form-control')) }}
+         </div>
+         <div class="form-group col-md-4">
+          {{ Form::submit('Search', array('class' => 'btn btn-primary')) }}
+          </div>
+          </div>
+          {{ Form::close() }}
+          </div>
 
 <table class="table table-striped table-bordered">
     <thead>

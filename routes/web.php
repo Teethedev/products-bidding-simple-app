@@ -27,5 +27,6 @@ Route::post('/dashboard/search', 'DashboardController@search');
 Route::get('/dashboard/search', 'DashboardController@index');
 
 Route::resource('dashboard/products', 'ProductController');
-
+Route::post('dashboard/products/search', 'ProductController@search');
+Route::get('dashboard/products/search', 'ProductController@index');
 //Route::post('dashboard/products/bid', 'ProductController@bid');
