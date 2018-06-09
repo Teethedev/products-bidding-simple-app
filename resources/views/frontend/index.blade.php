@@ -17,7 +17,25 @@
 
       <div class="album py-5 bg-light">
         <div class="container">
+  
+        <div class="row">
+          {{ HTML::ul($errors->all()) }}
+          {{ Form::open(array('url' => 'frontend/search')) }}
+          <div class="row">
+          <div class="form-group col-md-4">
+           {{ Form::label('Search', 'Search Products') }}
+           </div>
+           <div class="form-group col-md-4">
+            {{ Form::text('search', Input::old('search'), array('class' => 'form-control')) }}
+         </div>
+         <div class="form-group col-md-4">
+          {{ Form::submit('Search', array('class' => 'btn btn-primary')) }}
+          </div>
+          </div>
+          {{ Form::close() }}
+          </div>
 
+           
           <div class="row">
                @foreach($products as $key => $value)
             <div class="col-md-4">

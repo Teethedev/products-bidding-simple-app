@@ -104,4 +104,19 @@ class FrontendController extends Controller
             return Redirect::to('frontend');
         }
     }
+
+      /**
+     * Obtain search results.
+     *
+     * @return $results
+     */
+    public function search()
+    {
+          $string = Input::get('search');
+          $products = Product::search($string)->paginate(6);
+
+          return View::make('frontend.index')
+            ->with('products', $products);
+        
+    }
 }

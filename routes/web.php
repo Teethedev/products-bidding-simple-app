@@ -17,6 +17,8 @@
 Route::get('/', 'FrontendController@index');
 Route::resource('frontend', 'FrontendController');
 Route::post('frontend/bid', 'FrontendController@bid');
+Route::post('frontend/search', 'FrontendController@search');
+Route::get('frontend/search', 'FrontendController@index');
 
 Auth::routes();
 
