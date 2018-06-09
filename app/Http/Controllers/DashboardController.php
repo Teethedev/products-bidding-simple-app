@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use App\Repositories\DashboardStats;
 
 class DashboardController extends Controller
 {
@@ -26,20 +30,32 @@ class DashboardController extends Controller
     {
         $products = Product::paginate(10);
 
-        //(take this into a class repository)
-        $product_names = array();
-        $product_views = array();
-        foreach ($products as $product){
-           array_push($product_names,$product->name);
-           array_push($product_views,$product->product_stats->views);
-        }
-
-        $product_names = json_encode($product_names);
-        $product_views = json_encode($product_views);
+        $dashboard_stats = new DashboardStats;
+        $dashboard_data = $dashboard_stats->get_dashboard_stats($products);
 
         return view('dashboard')
                ->with('products', $products)
-               ->with('product_names', $product_names)
-               ->with('product_views', $product_views);
+               ->with('product_names', $dashboard_data[0])
+               ->with('product_views', $dashboard_data[1]);
+    }
+
+     /**
+     * Obtain search results.
+     *
+     * @return $results
+     */
+    public function search()
+    {
+          $string = Input::get('search');
+          $products = Product::search($string)->paginate(10);
+
+          $dashboard_stats = new DashboardStats;
+          $dashboard_data = $dashboard_stats->get_dashboard_stats($products);
+
+          return view('dashboard')
+               ->with('products', $products)
+               ->with('product_names', $dashboard_data[0])
+               ->with('product_views', $dashboard_data[1]);
+        
     }
 }

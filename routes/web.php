@@ -21,6 +21,8 @@ Route::post('frontend/bid', 'FrontendController@bid');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+Route::post('/dashboard/search', 'DashboardController@search');
+Route::get('/dashboard/search', 'DashboardController@index');
 
 Route::resource('dashboard/products', 'ProductController');
 

@@ -4,6 +4,22 @@
 <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
+            {{ HTML::ul($errors->all()) }}
+        <div class="container">
+         {{ Form::open(array('url' => 'dashboard/search')) }}
+          <div class="row">
+          <div class="form-group col-md-2">
+           {{ Form::label('Search', 'Search Products Graph') }}
+           </div>
+           <div class="form-group col-md-2">
+            {{ Form::text('search', Input::old('search'), array('class' => 'form-control')) }}
+         </div>
+         <div class="form-group col-md-2">
+          {{ Form::submit('Search', array('class' => 'btn btn-primary')) }}
+          </div>
+          </div>
+          {{ Form::close() }}
+          </div>
             <div class="btn-toolbar mb-2 mb-md-0">
               
             </div>

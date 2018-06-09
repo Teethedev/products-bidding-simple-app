@@ -24,6 +24,15 @@ Install the packages
     composer install
     npm install
 
+Configuring the search engine for the products
+ 
+     php artisan scout:import "App\Product"
+
+Open an account an account with algolia and configure your algolia details 
+  
+     ALGOLIA_APP_ID=id
+     ALGOLIA_SECRET=secret
+
 Copy the assets
 
     npm run dev

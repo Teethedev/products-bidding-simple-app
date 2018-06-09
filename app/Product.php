@@ -2,12 +2,15 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use App\Products_stat;
 use App\Products_bid;
 
 class Product extends Model
 {
+    use Searchable;
+    
     /**
      * Get the product stats associated with the product.
      */
