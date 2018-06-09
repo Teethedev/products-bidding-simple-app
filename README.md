@@ -28,7 +28,7 @@ Configuring the search engine for the products
  
      php artisan scout:import "App\Product"
 
-Open an account an account with algolia and configure your algolia details 
+Open an account with algolia and configure your algolia details in .env
   
      ALGOLIA_APP_ID=id
      ALGOLIA_SECRET=secret
